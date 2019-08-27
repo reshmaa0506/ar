@@ -1,0 +1,23 @@
+
+spring:
+  application:
+    name: callslate
+  datasource:
+    url: ${MYSQL_DB_URL:jdbc:mysql://localhost:3306/newproj?useSSL=false}
+    username: ${MYSQL_DB_USER:root}
+    password: ${MYSQL_DB_PASSWORD:xminds}
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        search:
+          default:
+            directory_provider: filesystem
+            indexBase: indexpath
+server:
+  port: ${SERVER_PORT:8080}
